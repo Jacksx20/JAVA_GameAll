@@ -5,10 +5,8 @@ import java.awt.Point;
 
 import math3D.Point3D;
 import math3D.VTs;
-
 /**
- * Ä§·½ÃæÉÏµÄĞ¡Õı·½ĞÎ
- * @author Administrator
+ * é­”æ–¹é¢ä¸Šçš„å°æ­£æ–¹å½¢
  *
  */
 public class Square {
@@ -69,7 +67,7 @@ public class Square {
 	private final int VIEWERROR=1000;
 	
 	/**
-	 * Ğ¡·½¿é¹¹Ôìº¯Êı
+	 * å°æ–¹å—æ„é€ å‡½æ•°
 	 * @param point1
 	 * @param point2
 	 * @param point3
@@ -88,11 +86,12 @@ public class Square {
 
 
 
+
 	/**
-	 * Ğ¡·½¸ñÈÆ¾­¹ı(0,0,0)£¬pointÁ½µãµÄÖ±ÏßĞı×ªangle½Ç¶È
-	 * @param point£º¿Õ¼äÒ»µã
-	 * @param angle£ºĞı×ª½Ç¶È
-	 * @param clockwise: trueÎªË³Ê±Õë£¬falseÎªÄæÊ±Õë
+	 * å°æ–¹æ ¼ç»•ç»è¿‡(0,0,0)ï¼Œpointä¸¤ç‚¹çš„ç›´çº¿æ—‹è½¬angleè§’åº¦
+	 * @param pointï¼šç©ºé—´ä¸€ç‚¹
+	 * @param angleï¼šæ—‹è½¬è§’åº¦
+	 * @param clockwise: trueä¸ºé¡ºæ—¶é’ˆï¼Œfalseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotate(Point3D point, double angle, boolean clockwise){
 		if (clockwise) {
@@ -109,7 +108,7 @@ public class Square {
 	}
 	
 	/**
-	 * ÈÆXÖĞĞı×ª½Ç¶Èangle
+	 * ç»•Xä¸­æ—‹è½¬è§’åº¦angle
 	 * @param angle
 	 */
 	public void rotateX(double angle) {
@@ -118,11 +117,12 @@ public class Square {
 		point3.rotateX(angle);
 		point4.rotateX(angle);
 	}
-	
+
 	/**
-	 * ÈÆYÖĞĞı×ª½Ç¶Èangle
+	 * ç»•Yä¸­æ—‹è½¬è§’åº¦angle
 	 * @param angle
 	 */
+
 	public void rotateY(double angle) {
 		point1.rotateY(angle);
 		point2.rotateY(angle);
@@ -131,7 +131,7 @@ public class Square {
 	}
 	
 	/**
-	 * ÈÆXYÖĞĞı×ª½Ç¶Èangle
+	 * ç»•XYä¸­æ—‹è½¬è§’åº¦angle
 	 * @param angle
 	 */
 	public void rotateXY(double angleX, double angleY) {
