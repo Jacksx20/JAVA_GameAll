@@ -21,7 +21,7 @@ public class CenterBlock {
 	}
 
 	/**
-	 * ÖĞĞÄ¿é¹¹Ôìº¯Êı
+	 * ä¸­å¿ƒå—æ„é€ å‡½æ•°
 	 * @param square
 	 */
 	public CenterBlock(Square square) {
@@ -30,17 +30,17 @@ public class CenterBlock {
 	}
 	
 	/**
-	 * ÖĞĞÄ¿éÈÆ¾­¹ı(0,0,0)£¬pointÁ½µãµÄÖ±ÏßĞı×ªangle½Ç¶È
-	 * @param point£º¿Õ¼äÒ»µã
-	 * @param angle£ºĞı×ª½Ç¶È
-	 * @param clockwise: trueÎªË³Ê±Õë£¬falseÎªÄæÊ±Õë
+	 * ä¸­å¿ƒå—ç»•ç»è¿‡(0,0,0)ï¼Œpointä¸¤ç‚¹çš„ç›´çº¿æ—‹è½¬angleè§’åº¦
+	 * @param pointï¼šç©ºé—´ä¸€ç‚¹
+	 * @param angleï¼šæ—‹è½¬è§’åº¦
+	 * @param clockwise: trueä¸ºé¡ºæ—¶é’ˆï¼Œfalseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotate(Point3D point, double angle, boolean clockwise){
 		square.rotate(point, angle, clockwise);
 	}
 	
 	/**
-	 * ÈÆXYÖĞĞı×ª½Ç¶Èangle
+	 * ç»•XYä¸­æ—‹è½¬è§’åº¦angle
 	 * @param angle
 	 */
 	public void rotateXY(double angleX, double angleY) {
@@ -56,7 +56,7 @@ public class CenterBlock {
 	}
 	
 	/**
-	 * »ñµÃÖĞĞÄ¿é¶ÔÓ¦µÄÕû¸öÃæµÄ2DÍ¶Ó°
+	 * è·å¾—ä¸­å¿ƒå—å¯¹åº”çš„æ•´ä¸ªé¢çš„2DæŠ•å½±
 	 * @return
 	 */
 	public Polygon getPolygon(){
