@@ -6,8 +6,7 @@ import java.util.List;
 import math3D.Point3D;
 
 /**
- * Ä§·½½Ç¿é£¬¹²16¸ö
- * @author Administrator
+ * é­”æ–¹è§’å—ï¼Œå…±16ä¸ª
  *
  */
 public class CornerBlock {
@@ -17,7 +16,7 @@ public class CornerBlock {
 	private Square square3;
 	
 	/**
-	 * ½Ç¿é¹¹Ôìº¯Êı
+	 * è§’å—æ„é€ å‡½æ•°
 	 * @param square1
 	 * @param square2
 	 * @param square3
@@ -30,10 +29,10 @@ public class CornerBlock {
 	}
 	
 	/**
-	 * ½Ç¿éÈÆ¾­¹ı(0,0,0)£¬pointÁ½µãµÄÖ±ÏßĞı×ªangle½Ç¶È
-	 * @param point£º¿Õ¼äÒ»µã
-	 * @param angle£ºĞı×ª½Ç¶È
-	 * @param clockwise: trueÎªË³Ê±Õë£¬falseÎªÄæÊ±Õë
+	 * è§’å—ç»•ç»è¿‡(0,0,0)ï¼Œpointä¸¤ç‚¹çš„ç›´çº¿æ—‹è½¬angleè§’åº¦
+	 * @param pointï¼šç©ºé—´ä¸€ç‚¹
+	 * @param angleï¼šæ—‹è½¬è§’åº¦
+	 * @param clockwise: trueä¸ºé¡ºæ—¶é’ˆï¼Œfalseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotate(Point3D point, double angle, boolean clockwise){
 		square1.rotate(point, angle, clockwise);
@@ -42,7 +41,7 @@ public class CornerBlock {
 	}
 	
 	/**
-	 * ÈÆXYÖĞĞı×ª½Ç¶Èangle
+	 * ç»•XYä¸­æ—‹è½¬è§’åº¦angle
 	 * @param angle
 	 */
 	public void rotateXY(double angleX, double angleY) {
