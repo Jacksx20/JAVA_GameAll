@@ -13,16 +13,9 @@ import javax.swing.JPanel;
 import math3D.Point3D;
 import math3D.VTs;
 
-/**
- * 
- * @author ¼Ö±ó	QQ£º1013560420
- *
- */
 public class Canvas_Cube extends JPanel{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	private final int VIEWERROR=1000;
@@ -45,7 +38,7 @@ public class Canvas_Cube extends JPanel{
 	
 	private final Color colorOrange=new Color(255,100,0);
 	private final Color colorYellow=new Color(255,255,100);
-	//Ä§·½µÄ8¸ö¶¥µã
+	//é­”æ–¹çš„8ä¸ªé¡¶ç‚¹
 	private Point3D a=new Point3D(-120, 120, 120);
 	private Point3D b=new Point3D(-120, 120, -120);
 	private Point3D c=new Point3D(120, 120, -120);
@@ -55,7 +48,7 @@ public class Canvas_Cube extends JPanel{
 	private Point3D g=new Point3D(120, -120, -120);
 	private Point3D h=new Point3D(120, -120, 120);
 	
-	//¸÷¸öÀãÉÏµÄµã
+	//å„ä¸ªæ¥ä¸Šçš„ç‚¹
 	private Point3D ad=new Point3D(-40, 120, 120);
 	private Point3D da=new Point3D(40, 120, 120);
 	private Point3D dh=new Point3D(120, 40, 120);
@@ -84,7 +77,7 @@ public class Canvas_Cube extends JPanel{
 	private Point3D hg=new Point3D(120, -120, 40);
 	private Point3D gh=new Point3D(120, -120, -40);
 	
-	//ÒÔÏÂÊÇ¸÷ÖĞĞÄ¿é¶¥µã
+	//ä»¥ä¸‹æ˜¯å„ä¸­å¿ƒå—é¡¶ç‚¹
 	private Point3D yellow_a=new Point3D(-40, 120, 40);
 	private Point3D yellow_b=new Point3D(-40, 120, -40);
 	private Point3D yellow_c=new Point3D(40, 120, -40);
@@ -230,11 +223,11 @@ public class Canvas_Cube extends JPanel{
 										cornerBlock_e,cornerBlock_f,cornerBlock_g,cornerBlock_h};
 	private EdgeBlock[] edgeBlocks={Blue_Yellow,Yellow_Green,Green_White,White_Blue,Yellow_Orange,Yellow_Red,
 									Red_White,White_Orange,Orange_Blue,Orange_Green,Red_Green,Red_Blue};
-	//¸ø½Ç¿éºÍÀâ¿é±àºÅ£¬´æÈëblockÊı×é,block[0]²»ÓÃ
+	//ç»™è§’å—å’Œæ£±å—ç¼–å·ï¼Œå­˜å…¥blockæ•°ç»„,block[0]ä¸ç”¨
 	private Object[] block=new Object[21];
-	//block1ÓÃÓÚ´æ´¢Ğı×ª²¿·Ö
+	//block1ç”¨äºå­˜å‚¨æ—‹è½¬éƒ¨åˆ†
 	private Object[] block1=new Object[9];
-	//block2ÓÃÓÚ´æ´¢Î´Ğı×ª²¿·Ö
+	//block2ç”¨äºå­˜å‚¨æœªæ—‹è½¬éƒ¨åˆ†
 	private Object[] block2=new Object[17];
 	
 	public Canvas_Cube() {
@@ -250,8 +243,8 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * À¶ÃæĞı×ª90¶È
-	 * @param clockWise£ºtureÎªË³Ê±Õë£»falseÎªÄæÊ±Õë
+	 * è“é¢æ—‹è½¬90åº¦
+	 * @param clockWiseï¼štureä¸ºé¡ºæ—¶é’ˆï¼›falseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotateBlue90(final Boolean clockWise){
 		new Thread(new Runnable() {
@@ -306,8 +299,8 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * ³ÈÃæĞı×ª90¶È
-	 * @param clockWise£ºtureÎªË³Ê±Õë£»falseÎªÄæÊ±Õë
+	 * æ©™é¢æ—‹è½¬90åº¦
+	 * @param clockWiseï¼štureä¸ºé¡ºæ—¶é’ˆï¼›falseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotateOrange90(final Boolean clockWise){
 		new Thread(new Runnable() {
@@ -362,8 +355,8 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * ÂÌÃæĞı×ª90¶È
-	 * @param clockWise£ºtureÎªË³Ê±Õë£»falseÎªÄæÊ±Õë
+	 * ç»¿é¢æ—‹è½¬90åº¦
+	 * @param clockWiseï¼štureä¸ºé¡ºæ—¶é’ˆï¼›falseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotateGreen90(final Boolean clockWise){
 		new Thread(new Runnable() {
@@ -416,8 +409,8 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * ºìÃæĞı×ª90¶È
-	 * @param clockWise£ºtureÎªË³Ê±Õë£»falseÎªÄæÊ±Õë
+	 * çº¢é¢æ—‹è½¬90åº¦
+	 * @param clockWiseï¼štureä¸ºé¡ºæ—¶é’ˆï¼›falseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotateRed90(final Boolean clockWise){
 		new Thread(new Runnable() {
@@ -470,8 +463,8 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ÆÃæĞı×ª90¶È
-	 * @param clockWise£ºtureÎªË³Ê±Õë£»falseÎªÄæÊ±Õë
+	 * é»„é¢æ—‹è½¬90åº¦
+	 * @param clockWiseï¼štureä¸ºé¡ºæ—¶é’ˆï¼›falseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotateYellow90(final Boolean clockWise){
 		new Thread(new Runnable() {
@@ -524,8 +517,8 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * °×ÃæĞı×ª90¶È
-	 * @param clockWise£ºtureÎªË³Ê±Õë£»falseÎªÄæÊ±Õë
+	 * ç™½é¢æ—‹è½¬90åº¦
+	 * @param clockWiseï¼štureä¸ºé¡ºæ—¶é’ˆï¼›falseä¸ºé€†æ—¶é’ˆ
 	 */
 	public void rotateWhite90(final Boolean clockWise){
 		new Thread(new Runnable() {
@@ -596,7 +589,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃÀ¶É«Ãæ±ß¿ò
+	 * è·å¾—è“è‰²é¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getBluePolygon(){
@@ -619,7 +612,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃ³ÈÉ«Ãæ±ß¿ò
+	 * è·å¾—æ©™è‰²é¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getOrangePolygon(){
@@ -642,7 +635,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃÂÌÉ«Ãæ±ß¿ò
+	 * è·å¾—ç»¿è‰²é¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getGreenPolygon(){
@@ -665,7 +658,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃºìÉ«Ãæ±ß¿ò
+	 * è·å¾—çº¢è‰²é¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getRedPolygon(){
@@ -688,7 +681,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃ»ÆÉ«Ãæ±ß¿ò
+	 * è·å¾—é»„è‰²é¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getYellowPolygon(){
@@ -711,7 +704,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃ°×É«Ãæ±ß¿ò
+	 * è·å¾—ç™½è‰²é¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getWhitePolygon(){
@@ -735,7 +728,7 @@ public class Canvas_Cube extends JPanel{
 	
 
 	/**
-	 * »ñµÃÀ¶É«±³Ãæ±ß¿ò
+	 * è·å¾—è“è‰²èƒŒé¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getBluePolygon1(){
@@ -768,7 +761,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃ³ÈÉ«±³Ãæ±ß¿ò
+	 * è·å¾—æ©™è‰²èƒŒé¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getOrangePolygon1(){
@@ -801,7 +794,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃÂÌÉ«±³Ãæ±ß¿ò
+	 * è·å¾—ç»¿è‰²èƒŒé¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getGreenPolygon1(){
@@ -834,7 +827,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃºìÉ«±³Ãæ±ß¿ò
+	 * è·å¾—çº¢è‰²èƒŒé¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getRedPolygon1(){
@@ -867,7 +860,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃ»ÆÉ«±³Ãæ±ß¿ò
+	 * è·å¾—é»„è‰²èƒŒé¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getYellowPolygon1(){
@@ -900,7 +893,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃ°×É«±³Ãæ±ß¿ò
+	 * è·å¾—ç™½è‰²èƒŒé¢è¾¹æ¡†
 	 * @return
 	 */
 	public Polygon getWhitePolygon1(){
@@ -933,7 +926,7 @@ public class Canvas_Cube extends JPanel{
 	}
 	
 	/**
-	 * »ñµÃÄ§·½µ±Ç°Ñ¡ÔñÃæµÄ±³Ãæ£¬ÓÃÓÚĞı×ªÊ±»æÖÆ
+	 * è·å¾—é­”æ–¹å½“å‰é€‰æ‹©é¢çš„èƒŒé¢ï¼Œç”¨äºæ—‹è½¬æ—¶ç»˜åˆ¶
 	 * @return
 	 */
 	public Polygon getPolygon1(){
