@@ -12,9 +12,7 @@ import math3D.VTs;
 
 
 public class MainFrame extends JFrame implements Runnable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	//Canvas canvas=new Canvas();
@@ -34,7 +32,7 @@ public class MainFrame extends JFrame implements Runnable {
   }
     
   public MainFrame() {
-    super("Ä§·½ÓÎÏ·");
+    super("MagicCube");
     setSize(700, 700);
     
     //enableEvents(AWTEvent.WINDOW_EVENT_MASK);
@@ -42,7 +40,7 @@ public class MainFrame extends JFrame implements Runnable {
     setVisible(true);
     setResizable(false);
     addKeyListener(new MyKeyListenner());
-    JLabel label=new JLabel("ÓÃÊó±êÑ¡ÔñÒªĞı×ªµÄÃæ¡£°´D¼ü»ò¡ú¼üË³Ê±ÕëĞı×ª£»°´S¼ü»ò¡û¼üÄæÊ±ÕëĞı×ª¡£");
+    JLabel label=new JLabel("é¼ æ ‡é€‰æ‹©è¦æ—‹è½¬çš„é¢ã€‚æŒ‰Dé”®æˆ–â†’é”®é¡ºæ—¶é’ˆæ—‹è½¬ï¼›æŒ‰Sé”®æˆ–â†é”®é€†æ—¶é’ˆæ—‹è½¬");
     canvas_Cube.add(label);
     add(canvas_Cube);
     }
@@ -68,10 +66,10 @@ public class MainFrame extends JFrame implements Runnable {
 	public void keyPressed(KeyEvent e) {
 		super.keyPressed(e);
 		if (e.getKeyCode()==KeyEvent.VK_CONTROL) {
-			System.out.println("ÖÆ±í·û");
+			System.out.println("åˆ¶è¡¨ç¬¦");
 			
 		} else if((e.getKeyCode()==KeyEvent.VK_LEFT||e.getKeyCode()==KeyEvent.VK_A)&&!canvas_Cube.isRotating()) {
-			System.out.println("×ó");
+			System.out.println("å·¦");
 			if (canvas_Cube.selected==canvas_Cube.BLUE) {
 				canvas_Cube.rotateBlue90(false);
 			}else if (canvas_Cube.selected==canvas_Cube.ORANGE) {
@@ -87,7 +85,7 @@ public class MainFrame extends JFrame implements Runnable {
 			}
 			canvas_Cube.update(canvas_Cube.getGraphics());
 		}else if((e.getKeyCode()==KeyEvent.VK_RIGHT||e.getKeyCode()==KeyEvent.VK_D)&&!canvas_Cube.isRotating()) {
-			System.out.println("ÓÒ");
+			System.out.println("å³");
 			if (canvas_Cube.selected==canvas_Cube.BLUE) {
 				canvas_Cube.rotateBlue90(true);
 			}else if (canvas_Cube.selected==canvas_Cube.ORANGE) {
