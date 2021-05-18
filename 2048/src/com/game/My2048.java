@@ -4,28 +4,27 @@ import java.awt.*;
 import javax.swing.*;
 public class My2048 extends JFrame 
 { 
-  public My2048()//¹¹Ôìº¯Êı 
+  public My2048()//æ„é€ å‡½æ•° 
   {
-    setTitle("2048");//ÉèÖÃ±êÌâ
-    setSize(400, 400);//Éè¶¨´°¿Ú´óĞ¡
-    setLocation(500, 200);//Éè¶¨´°¿ÚÆğÊ¼Î»ÖÃ
+    setTitle("2048");//è®¾ç½®æ ‡é¢˜
+    setSize(400, 400);//è®¾å®šçª—å£å¤§å°
+    setLocation(500, 200);//è®¾å®šçª—å£èµ·å§‹ä½ç½®
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    getContentPane().setLayout(new GridLayout(4, 4, 5, 5));//Éè¶¨²¼¾Ö·½Ê½ÎªGridLayoutĞÍ
+    getContentPane().setLayout(new GridLayout(4, 4, 5, 5));//è®¾å®šå¸ƒå±€æ–¹å¼ä¸ºGridLayoutå‹
     new Operation(this);
-    this.setVisible(true);//ÉèÎª¿ÉÊÓ
-  }
+    this.setVisible(true);//è®¾ä¸ºå¯è§†
   
-  public static void main(String args[]) //³ÌĞòÈë¿Úµã
+  public static void main(String args[]) //ç¨‹åºå…¥å£ç‚¹
   {
     try
     {
-      UIManager.setLookAndFeel("org.jvnet.substance.skin.SubstanceRavenGraphiteLookAndFeel");//Éè¶¨UI
-    } //½ÓÊÜÅ×³öµÄÒì³£
+      UIManager.setLookAndFeel("org.jvnet.substance.skin.SubstanceRavenGraphiteLookAndFeel");//è®¾å®šUI
+    } //æ¥å—æŠ›å‡ºçš„å¼‚å¸¸
     catch (ClassNotFoundException | InstantiationException| IllegalAccessException | UnsupportedLookAndFeelException e)
     {
       e.printStackTrace();
     }
-    JFrame.setDefaultLookAndFeelDecorated(true);//Éè¶¨FrameµÄÈ±Ê¡Íâ¹Û
+    JFrame.setDefaultLookAndFeelDecorated(true);//è®¾å®šFrameçš„ç¼ºçœå¤–è§‚
     new My2048();
   }
   
