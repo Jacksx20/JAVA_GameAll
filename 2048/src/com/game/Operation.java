@@ -4,16 +4,16 @@ import java.awt.event.*;
 import javax.swing.*;
 public class Operation implements KeyListener
 {
-  Block[] block;//ÓÃÓÚ´¢´æ16¸öÊı¾İ
+  Block[] block;//ç”¨äºå‚¨å­˜16ä¸ªæ•°æ®
   JPanel panel;
   public boolean up,down,left,right;
-  int moveFlag;//ÓÃÓÚÀÛ¼ÆÒÆ¶¯µÄ´ÎÊı
-  boolean numFlag;//ÓÃÓÚÅĞ¶ÏÊÇ·ñ»¹ÄÜ¼ÓÈëĞÂµÄÊı×Ö
+  int moveFlag;//ç”¨äºç´¯è®¡ç§»åŠ¨çš„æ¬¡æ•°
+  boolean numFlag;//ç”¨äºåˆ¤æ–­æ˜¯å¦è¿˜èƒ½åŠ å…¥æ–°çš„æ•°å­—
   public Operation(JFrame frame) 
   {
-    this.panel = (JPanel)frame.getContentPane();//¹¹Ôì³öpanel
-    block = new Block[16];//¹¹Ôì³ö³¤¶ÈÎª16µÄÊı×é
-    numFlag = true;//³õÊ¼»¯
+    this.panel = (JPanel)frame.getContentPane();//æ„é€ å‡ºpanel
+    block = new Block[16];//æ„é€ å‡ºé•¿åº¦ä¸º16çš„æ•°ç»„
+    numFlag = true;//åˆå§‹åŒ–
     moveFlag = 0;
     up=true;down=true;left=true;right=true;
     addBlock();
@@ -24,20 +24,19 @@ public class Operation implements KeyListener
   
   private void addBlock() 
   {
-    for (int i = 0; i < 16; i++) //ÍùpanelÀï¼ÓÈëblock
+    for (int i = 0; i < 16; i++) //å¾€panelé‡ŒåŠ å…¥block
     {
       block[i] = new Block();
-      block[i].setHorizontalAlignment(JLabel.CENTER);// ²»Í¸Ã÷µÄ±êÇ©
+      block[i].setHorizontalAlignment(JLabel.CENTER);// ä¸é€æ˜çš„æ ‡ç­¾
       block[i].setOpaque(true);
       panel.add(block[i]);  
     }
   } 
   public void appearBlock() 
   {
-    while (numFlag) //µ±»¹ÄÜ¼ÓÈëËæ»úµÄÒ»¸öĞÂµÄÖµµÃÊ±ºò
-    {
-      int index = (int) (Math.random() * 16);//È¡Ò»¸ö0µ½15µÄËæ»úÕûÊı£¬Õâ¸öÊı×÷ÎªËæ»ú¼ÓÈëÅÌÖĞµÄ2»ò4µÄÎ»ÖÃ
-      if (block[index].getValue() == 0)//Èç¹ûÕâ¸öÊıËùÔÚµÄblockÊı×éÖĞÖµÎª0£¬¼´ÔÚÎª¿ÕµÄÊ±ºò£¬¼ÓÈëÒ»¸ö2»ò4µÄÊı×Ö
+    while (numFlag) //å½“è¿˜èƒ½åŠ å…¥éšæœºçš„ä¸€ä¸ªæ–°çš„å€¼å¾—æ—¶å€™
+      int index = (int) (Math.random() * 16);//å–ä¸€ä¸ª0åˆ°15çš„éšæœºæ•´æ•°ï¼Œè¿™ä¸ªæ•°ä½œä¸ºéšæœºåŠ å…¥ç›˜ä¸­çš„2æˆ–4çš„ä½ç½®
+      if (block[index].getValue() == 0)//å¦‚æœè¿™ä¸ªæ•°æ‰€åœ¨çš„blockæ•°ç»„ä¸­å€¼ä¸º0ï¼Œå³åœ¨ä¸ºç©ºçš„æ—¶å€™ï¼ŒåŠ å…¥ä¸€ä¸ª2æˆ–4çš„æ•°å­—
       {
         if (Math.random() < 0.5)
         {
@@ -47,12 +46,12 @@ public class Operation implements KeyListener
         {
           block[index].setValue(4);
         }
-        break;//Ìø³öwhile
+        break;//è·³å‡ºwhile
       }
     }
   }
   
-  public void judgeAppear() //Í³¼ÆblockÊı×éÖĞÊÇ·ñº¬ÓĞÖµÎª0µÄÔªËØ£¬ÈôÃ»ÓĞ£¬ÔònumFlag±äÎªfalse
+  public void judgeAppear() //ç»Ÿè®¡blockæ•°ç»„ä¸­æ˜¯å¦å«æœ‰å€¼ä¸º0çš„å…ƒç´ ï¼Œè‹¥æ²¡æœ‰ï¼Œåˆ™numFlagå˜ä¸ºfalse
   {
     int sum = 0;
     for (int i = 0; i < 16; i++) 
@@ -273,7 +272,7 @@ public class Operation implements KeyListener
   }
   public void over() 
   {
-    if (numFlag ==false&& up==false&&down==false&&left==false&&right==false) //µ±²»ÄÜÌí¼ÓÔªËØ£¬²¢ÇÒ²»¿ÉÒÆ¶¯µÄ²½Êı³¬¹ı36¾ÍÊäÁË£¬ÊäÁËµÄÊ±ºòÔÚÅÌÖĞÑëÏÔÊ¾GAMEOVER
+    if (numFlag ==false&& up==false&&down==false&&left==false&&right==false) //å½“ä¸èƒ½æ·»åŠ å…ƒç´ ï¼Œå¹¶ä¸”ä¸å¯ç§»åŠ¨çš„æ­¥æ•°è¶…è¿‡36å°±è¾“äº†ï¼Œè¾“äº†çš„æ—¶å€™åœ¨ç›˜ä¸­å¤®æ˜¾ç¤ºGAMEOVER
     {
       block[4].setText("G");
       block[5].setText("A");
@@ -287,7 +286,7 @@ public class Operation implements KeyListener
     }
   }
     
-  public void win() //Í¬OVER
+  public void win() //åŒOVER
   { 
     block[0].setText("Y");
     block[1].setText("O");
@@ -301,7 +300,7 @@ public class Operation implements KeyListener
       }
     });
   }
-  public void reStart()//ÖØÆôÓÎÏ·£¬ºÍ¹¹Ôìº¯ÊıÀàËÆ£¬²»ÔÚÀÛÊö
+  public void reStart()//é‡å¯æ¸¸æˆï¼Œå’Œæ„é€ å‡½æ•°ç±»ä¼¼ï¼Œä¸åœ¨ç´¯è¿°
   {
     numFlag=true;
     moveFlag=0;
@@ -311,7 +310,7 @@ public class Operation implements KeyListener
     for (int i = 0; i < 2; i++)
       appearBlock();
   }
-  public void keyPressed(KeyEvent e) //ÅĞ¶Ï°´µÄÉÏÏÂ×óÓÒ¼ü£¬²¢ÒÀ´Îµ÷ÓÃÒÆ¶¯º¯Êı¡¢ÅĞ¶Ïº¯Êı¡¢Ìí¼Óº¯Êı¡¢ÅĞ¶ÏÊÇ·ñÊäµôµÄº¯Êı
+  public void keyPressed(KeyEvent e) //åˆ¤æ–­æŒ‰çš„ä¸Šä¸‹å·¦å³é”®ï¼Œå¹¶ä¾æ¬¡è°ƒç”¨ç§»åŠ¨å‡½æ•°ã€åˆ¤æ–­å‡½æ•°ã€æ·»åŠ å‡½æ•°ã€åˆ¤æ–­æ˜¯å¦è¾“æ‰çš„å‡½æ•°
   {
     switch (e.getKeyCode()) {
     case KeyEvent.VK_UP:
