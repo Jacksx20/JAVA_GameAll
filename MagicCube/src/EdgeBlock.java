@@ -3,8 +3,7 @@ import java.awt.Graphics2D;
 import math3D.Point3D;
 
 /**
- * Àâ¿é£¬¹²12¸ö
- * @author Administrator
+ * æ£±å—ï¼Œå…±12ä¸ª
  *
  */
 public class EdgeBlock {
@@ -13,7 +12,7 @@ public class EdgeBlock {
 	private Square square2;
 	
 	/**
-	 * Àâ¿é¹¹Ôìº¯Êı
+	 * æ£±å—æ„é€ å‡½æ•°
 	 * @param square1
 	 * @param square2
 	 */
@@ -23,19 +22,18 @@ public class EdgeBlock {
 		this.square2 = square2;
 	}
 	
-	/**
-	 * Àã¿éÈÆ¾­¹ı(0,0,0)£¬pointÁ½µãµÄÖ±ÏßĞı×ªangle½Ç¶È
-	 * @param point£º¿Õ¼äÒ»µã
-	 * @param angle£ºĞı×ª½Ç¶È
-	 * @param clockwise: trueÎªË³Ê±Õë£¬falseÎªÄæÊ±Õë
-	 */
+	* æ¥å—ç»•ç»è¿‡(0,0,0)ï¼Œpointä¸¤ç‚¹çš„ç›´çº¿æ—‹è½¬angleè§’åº¦
+	* @param pointï¼šç©ºé—´ä¸€ç‚¹
+	* @param angleï¼šæ—‹è½¬è§’åº¦
+	* @param clockwise: trueä¸ºé¡ºæ—¶é’ˆï¼Œfalseä¸ºé€†æ—¶é’ˆ
+	*/
 	public void rotate(Point3D point, double angle, boolean clockwise){
 		square1.rotate(point, angle, clockwise);
 		square2.rotate(point, angle, clockwise);
 	}
 	
 	/**
-	 * ÈÆXYÖĞĞı×ª½Ç¶Èangle
+	 * ç»•XYä¸­æ—‹è½¬è§’åº¦angle
 	 * @param angle
 	 */
 	public void rotateXY(double angleX, double angleY) {
