@@ -7,12 +7,12 @@ public class Block extends JLabel
   private int value;
   public Block() 
   {
-    value = 0;//³õÊ¼»¯ÖµÎª0
-    setFont(new Font("font", Font.PLAIN, 40));//Éè¶¨×ÖÌå
-    setBackground(Color.gray);//Éè¶¨³õÊ¼ÑÕÉ«Îª»ÒÉ«
+    value = 0;//åˆå§‹åŒ–å€¼ä¸º0
+    setFont(new Font("font", Font.PLAIN, 40));//è®¾å®šå­—ä½“
+    setBackground(Color.gray);//è®¾å®šåˆå§‹é¢œè‰²ä¸ºç°è‰²
   }
   
-  public int getValue()//»ñÈ¡Öµ
+  public int getValue()//è·å–å€¼
   {
     return value;
   }
@@ -24,11 +24,11 @@ public class Block extends JLabel
     if (value != 0)
       setText(text);
     else
-      setText("");//Èç¹ûÖµÎª0Ôò²»ÏÔÊ¾
+      setText("");//å¦‚æœå€¼ä¸º0åˆ™ä¸æ˜¾ç¤º
     setColor();
   }
   
-  public void setColor() //¸ù¾İÖµµÄ²»Í¬Éè¶¨²»Í¬µÄ±³¾°ÑÕÉ«¡¢label×ÖÌå
+  public void setColor() //æ ¹æ®å€¼çš„ä¸åŒè®¾å®šä¸åŒçš„èƒŒæ™¯é¢œè‰²ã€labelå­—ä½“
   {
     switch (value) 
       {
