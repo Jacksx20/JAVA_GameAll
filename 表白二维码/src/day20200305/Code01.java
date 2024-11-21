@@ -26,7 +26,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 public class Code01 {
 	
 	public static void main(String[] args) {
-		getCode(400,400,"jpg","我爱你","C:\\Users\\Jack淳\\Desktop\\表白二维码\\TT.jpg");
+		getCode(400,400,"jpg","我爱你","C:\\Users\\Jack\\Desktop\\表白二维码\\TT.jpg");
 	}
 	
 	//设置两个常量用来标注颜色
