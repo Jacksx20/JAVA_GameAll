@@ -16,66 +16,73 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 /**
- * 二维码表白女神or感恩妈妈？
+ * Code01类用于生成表白二维码图片。
+ * 使用ZXing库将文本内容编码为QR Code二维码，
+ * 并将生成的二维码图片保存为指定格式的文件。
  * 
- * Jack20
- * core-3.3.3.jar
- * 
- * 
+ * 依赖: core-3.3.3.jar (ZXing二维码核心库)
  */
 public class Code01 {
 	
+	/**
+	 * 程序入口点，生成一个400x400的JPG格式二维码，
+	 * 内容为"我爱你"，保存到指定路径。
+	 * @param args 命令行参数
+	 */
 	public static void main(String[] args) {
 		getCode(400,400,"jpg","我爱你","C:\\Users\\Jack\\Desktop\\表白二维码\\TT.jpg");
 	}
 	
-	//设置两个常量用来标注颜色
+	/** 二维码中黑色模块的RGB颜色值 */
 	private static final int BLACK = Color.BLACK.getRGB();
+	/** 二维码中白色模块的RGB颜色值 */
 	private static final int WHITE = Color.WHITE.getRGB();
 	
 	/**
-	 * 获取二维码图片
-	 * @param width 图片宽度
-	 * @param height 图片高度
-	 * @param type 图片类型（jpg,png）
-	 * @param content 二维码携带的内容
-	 * @param path 存放的路径
+	 * 生成二维码图片并保存到指定路径。
+	 * 步骤：
+	 * 1. 设置二维码基本信息（字符集、留白边距、纠错等级）
+	 * 2. 使用ZXing的MultiFormatWriter将内容编码为BitMatrix二维矩阵
+	 * 3. 将BitMatrix转换为BufferedImage图片（黑色/白色模块）
+	 * 4. 将图片写入文件
 	 * 
-	 * 集合，IO文件的操作，图片，常量，jar
+	 * @param width   二维码图片宽度（像素）
+	 * @param height  二维码图片高度（像素）
+	 * @param type    图片格式类型（如"jpg"、"png"）
+	 * @param content 二维码携带的文本内容
+	 * @param path    输出图片文件的保存路径
 	 */
 	public static void getCode(int width,int height,String type,String content,String path) {
-		//1.设置二维码的基本信息（纠错等级，留白）
-		
+		// 1.设置二维码的基本信息（纠错等级，留白）
 		Map map = new HashMap();
-		//添加put()
-		//字符集
+		// 字符集设为UTF-8，支持中文内容
 		map.put(EncodeHintType.CHARACTER_SET, "UTF-8");
-		//留白
+		// 留白边距设为2
 		map.put(EncodeHintType.MARGIN, 2);
-		//纠错等级	L(7%) M(15%) Q(25%) H(30%)
+		// 纠错等级设为L(7%): L(7%) M(15%) Q(25%) H(30%)
 		map.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
 		
-		//二维码图片输出流
+		// 创建ZXing的多格式编码器
 		MultiFormatWriter mu = new MultiFormatWriter();
-		//encode():内容，码的类型，宽度，高度，基本信息
-		//BitMatrix:二维矩阵类
 		try {
+			// 将内容编码为QR Code类型的BitMatrix二维矩阵
+			// 参数: 内容, 码类型, 宽度, 高度, 基本信息配置
 			BitMatrix bit = mu.encode(content, BarcodeFormat.QR_CODE, width, height, map);
 			
-			//画图
+			// 创建BufferedImage用于绘制二维码图片
 			BufferedImage image = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
 			
+			// 遍历矩阵的每个像素点，根据BitMatrix的值设置黑色或白色
 			for(int i=0; i<width; i++) {
 				for(int j=0; j<height; j++) {
-					//get(x,y):没有值false(白色)	有值true（黑色）
-					//三目运算符
+					// bit.get(i,j): 有值true(黑色)，无值false(白色)
 					int rgb = bit.get(i, j)?BLACK:WHITE;
 					image.setRGB(i, j, rgb);
 				}
 			}
 			
+			// 将图像写入到指定路径的文件中
 			File file = new File(path);
-			//将图像写入到File文件中
 			boolean flag = ImageIO.write(image,type,file);
 			if(!flag) {
 				System.out.println("垃圾，赶紧找静静好好学习");
@@ -85,19 +92,6 @@ public class Code01 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-			
-		
-		
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
